@@ -1,0 +1,7 @@
+version: '3'
+services:
+  crm_frontend:
+    container_name: crm_frontend
+    build: .
+    ports:
+      - "80:80"
