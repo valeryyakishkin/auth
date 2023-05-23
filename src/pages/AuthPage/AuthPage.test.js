@@ -4,6 +4,7 @@ import { Provider } from "react-redux";
 import store from "../../app/store";
 
 describe("Auth page", () => {
+  // Перед каждым тестом рендерим компонент страницы авторизации внутри компонента Provider с передачей хранилища состояния
   beforeEach(() => {
     render(
       <Provider store={store}>
@@ -47,8 +48,9 @@ describe("Auth page", () => {
     expect(button).toBeInTheDocument();
   });
 
+  // Тестируем корректность работы кнопки «Показать пароль»
   test("toggles password visibility", () => {
-    const passwordInput = screen.getByLabelText(/Пароль/i);
+    const passwordInput = screen.getByLabelText(/пароль/i);
     expect(passwordInput).toHaveAttribute("type", "password");
     const showPasswordButton = screen.getByRole("button", {
       name: "",
